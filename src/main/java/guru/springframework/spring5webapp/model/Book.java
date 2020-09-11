@@ -12,7 +12,6 @@ import java.util.Set;
 
 @Entity
 public class Book {
-    
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +24,6 @@ public class Book {
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
-
 
     public Book() {
     }
@@ -83,12 +81,12 @@ public class Book {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Book{");
-        sb.append("id=").append(id);
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", isbn='").append(isbn).append('\'');
-        sb.append(", authors=").append(authors);
-        sb.append('}');
-        return sb.toString();
+        final StringBuffer buffer = new StringBuffer("Book{");
+        buffer.append("id=").append(id);
+        buffer.append(", title='").append(title).append('\'');
+        buffer.append(", isbn='").append(isbn).append('\'');
+        buffer.append(", authors=").append(authors);
+        buffer.append('}');
+        return buffer.toString();
     }
 }
